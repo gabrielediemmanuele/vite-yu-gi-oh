@@ -6,23 +6,35 @@ import axios from "axios";
 export default {
   data() {
     return {
-      /*  title: "Hello world", */
+      yugiohCards: [],
     };
   },
 
   // components: {
   //   MyComponent,
   // },
+  methods: {
+    catchCards() {
+      axios
+        .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
+        .then((response) => {
+          console.log(response.data.data);
+          this.yugiohCards = response.data.data;
+        });
+    },
+  },
   created() {
-    axios
-      .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
-      .then((response) => {
-        console.log(response.data.data);
-      });
+    this.catchCards();
   },
 };
 </script>
 
-<template></template>
+<template>
+  <section class="cards-cont">
+    <div class="card" v-for="card in yugiohCards">
+      {{ card.name }}
+    </div>
+  </section>
+</template>
 
 <style lang="scss" scoped></style>
