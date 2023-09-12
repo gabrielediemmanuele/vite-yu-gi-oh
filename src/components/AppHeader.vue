@@ -16,7 +16,7 @@ export default {
   <header>
     <div class="container">
       <img src="../../src/assets/pngegg.png" alt="" />
-      <span>.API</span>
+      <span>YU-GI-OH! API</span>
     </div>
   </header>
 </template>
@@ -26,14 +26,15 @@ export default {
   width: 100%;
   height: 200px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   img {
-    height: 100%;
+    height: 100px;
   }
   span {
-    margin-left: 20px;
     font-size: 50px;
+    color: white;
   }
 }
 </style>

@@ -1,5 +1,6 @@
 <script>
 import axios from "axios";
+import Card from "./Card.vue";
 
 // import MyComponent from "./components/MyComponent.vue";
 
@@ -10,9 +11,9 @@ export default {
     };
   },
 
-  // components: {
-  //   MyComponent,
-  // },
+  components: {
+    Card,
+  },
   methods: {
     catchCards() {
       axios
@@ -31,21 +32,20 @@ export default {
 
 <template>
   <section class="cards-cont">
-    <div class="card" v-for="card in yugiohCards" :key="card.id">
-      <img :src="card.card_images.image_url" alt="" />
-      <span>{{ card.name }}</span>
-      <span>{{ card.archetype }}</span>
-    </div>
+    <Card v-for="card in yugiohCards" :key="card.id" :yugiCard="card"> </Card>
   </section>
 </template>
 
 <style lang="scss" scoped>
-.card {
-  width: 100px;
-  height: 300px;
-
-  img {
-    width: 100%;
-  }
+.cards-cont {
+  width: 80%;
+  margin: 30px auto;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
 }
 </style>
