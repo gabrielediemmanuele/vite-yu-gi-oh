@@ -27,23 +27,25 @@ export default {
 
 <style lang="scss">
 .card {
-  width: calc(100% / 6 - 30px);
-  margin: 15px 8px 25px 8px;
-  height: 325px;
-  padding: 5px;
+  width: calc(100% / 5 - 40px);
+  margin: 8px 8px 8px 8px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   text-align: center;
 
+  &:hover {
+    background-color: rgb(214, 248, 142);
+  }
+
   .card-name {
     font-size: 15px;
     font-weight: bold;
     margin: 5px 5px;
   }
-  .card-archetype {
-  }
+
   img {
     width: 100%;
     background-color: rgb(230, 111, 111);
