@@ -23,7 +23,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(96, 96, 228);
+  background-image: url(../src/assets/);
 }
 .general-cont {
   font-family: Arial, Helvetica, sans-serif;
