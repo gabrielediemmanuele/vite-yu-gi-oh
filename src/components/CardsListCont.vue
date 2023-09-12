@@ -1,8 +1,8 @@
 <script>
+//Axios
 import axios from "axios";
+//Component card.vue
 import Card from "./Card.vue";
-
-// import MyComponent from "./components/MyComponent.vue";
 
 export default {
   data() {
@@ -10,10 +10,12 @@ export default {
       yugiohCards: [],
     };
   },
-
+  //Component card.vue
   components: {
     Card,
   },
+
+  // Axios for remote array of cards
   methods: {
     catchCards() {
       axios
@@ -31,6 +33,7 @@ export default {
 </script>
 
 <template>
+  <!--   Add a select like in the screenshot  -->
   <div>
     <select name="card-type" id="card-type">
       <option value="Alien">Alien</option>
@@ -45,13 +48,6 @@ export default {
 </template>
 
 <style lang="scss">
-div > #card-type {
-  margin: 0 200px;
-  padding: 10px;
-  font-size: 20px;
-  border-radius: 12px;
-}
-
 .cards-cont {
   width: 80%;
   margin: 30px auto;
@@ -61,5 +57,13 @@ div > #card-type {
   padding: 20px 20px;
   border-radius: 20px;
   justify-content: center;
+}
+
+//* select options
+div > #card-type {
+  margin: 0 200px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 12px;
 }
 </style>

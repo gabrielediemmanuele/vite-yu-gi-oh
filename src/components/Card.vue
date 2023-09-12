@@ -1,11 +1,7 @@
 <script>
-// import MyComponent from "./components/MyComponent.vue";
-
 export default {
   data() {
-    return {
-      /*  title: "Hello world" */
-    };
+    return {};
   },
   props: {
     yugiCard: Object[String],
@@ -17,6 +13,7 @@ export default {
 };
 </script>
 
+<!--! SINGLE CARD TEMPLATE  -->
 <template>
   <div class="card">
     <img :src="yugiCard.card_images[0].image_url" alt="" />
