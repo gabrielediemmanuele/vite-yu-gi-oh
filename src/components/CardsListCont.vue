@@ -31,10 +31,21 @@ export default {
 
 <template>
   <section class="cards-cont">
-    <div class="card" v-for="card in yugiohCards">
-      {{ card.name }}
+    <div class="card" v-for="card in yugiohCards" :key="card.id">
+      <img :src="card.card_images.image_url" alt="" />
+      <span>{{ card.name }}</span>
+      <span>{{ card.archetype }}</span>
     </div>
   </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card {
+  width: 100px;
+  height: 300px;
+
+  img {
+    width: 100%;
+  }
+}
+</style>

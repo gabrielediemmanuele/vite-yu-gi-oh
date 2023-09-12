@@ -1,18 +1,25 @@
 <script>
 import CardsListCont from "./components/CardsListCont.vue";
+import AppHeader from "./components/AppHeader.vue";
 export default {
   data() {
     return {
-      title: "Hello world",
+      /* title: "Hello world", */
     };
   },
-  components: { CardsListCont },
+  components: { CardsListCont, AppHeader },
 };
 </script>
 
 <template>
-  <h1>{{ title }}</h1>
-  <CardsListCont></CardsListCont>
+  <div class="general-cont">
+    <AppHeader></AppHeader>
+    <CardsListCont></CardsListCont>
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.general-cont {
+  background-color: rgb(96, 96, 228);
+}
+</style>
