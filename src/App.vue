@@ -18,9 +18,14 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped>
-.general-cont {
+<style lang="scss">
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background-color: rgb(96, 96, 228);
+}
+.general-cont {
   font-family: Arial, Helvetica, sans-serif;
 }
 </style>

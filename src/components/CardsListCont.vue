@@ -36,14 +36,14 @@ export default {
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .cards-cont {
   width: 80%;
   margin: 30px auto;
   background-color: white;
   display: flex;
   flex-wrap: wrap;
-  padding: 20px;
+  padding: 50px 35px;
   border-radius: 20px;
   align-items: center;
   justify-content: center;

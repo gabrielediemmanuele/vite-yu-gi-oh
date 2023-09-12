@@ -8,7 +8,7 @@ export default {
     };
   },
   props: {
-    yugiCard: String,
+    yugiCard: Object[String],
   },
 
   // components: {
@@ -20,17 +20,30 @@ export default {
 <template>
   <div class="card">
     <img :src="yugiCard.card_images[0].image_url" alt="" />
-    <span>{{ yugiCard.name }}</span>
-    <span>{{ yugiCard.archetype }}</span>
+    <span class="card-name">{{ yugiCard.name }}</span>
+    <span class="card-archetype">{{ yugiCard.archetype }}</span>
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .card {
-  width: calc(100% / 5 - 30px);
-  margin: 5px 5px 5px 5px;
-  height: 320px;
+  width: calc(100% / 6 - 30px);
+  margin: 15px 8px 25px 8px;
+  height: 325px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
 
+  .card-name {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 5px 5px;
+  }
+  .card-archetype {
+  }
   img {
     width: 100%;
     background-color: rgb(230, 111, 111);
