@@ -21,5 +21,6 @@ export default {
 <style lang="scss" scoped>
 .general-cont {
   background-color: rgb(96, 96, 228);
+  font-family: Arial, Helvetica, sans-serif;
 }
 </style>
