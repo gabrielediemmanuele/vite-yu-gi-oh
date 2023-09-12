@@ -23,7 +23,10 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-image: url(../src/assets/);
+  background-image: url(./assets/yugioh-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .general-cont {
   font-family: Arial, Helvetica, sans-serif;

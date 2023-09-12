@@ -1,14 +1,8 @@
 <script>
-// import MyComponent from "./components/MyComponent.vue";
-
 export default {
   data() {
     return {};
   },
-
-  // components: {
-  //   MyComponent,
-  // },
 };
 </script>
 
@@ -16,7 +10,7 @@ export default {
   <header>
     <div class="container">
       <img src="../../src/assets/pngegg.png" alt="" />
-      <span>YU-GI-OH! API</span>
+      <span>API</span>
     </div>
   </header>
 </template>
@@ -29,6 +23,8 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
   img {
     height: 100px;
   }
