@@ -24,16 +24,16 @@ export default {
   methods: {
     catchCards() {
       axios
-        .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
+        .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=100&offset=0")
         .then((response) => {
-          console.log(response.data.data);
+          /* console.log(response.data.data); */
           this.store.yugiohCards = response.data.data;
         });
     },
     //FILTER
     getSearch(filter) {
       const results = `${this.cardsUrl}&archetypes=${filter}`;
-      console.log(results);
+      this.catchCards(results);
     },
   },
   created() {
@@ -55,11 +55,13 @@ export default {
 .cards-cont {
   width: 80%;
   margin: 30px auto;
+  height: 600px;
   background-color: rgba(255, 255, 255, 0.8);
   display: flex;
   flex-wrap: wrap;
   padding: 20px 20px;
   border-radius: 20px;
   justify-content: center;
+  overflow-y: auto;
 }
 </style>
