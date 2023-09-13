@@ -4,16 +4,22 @@ import axios from "axios";
 export default {
   data() {
     return {
-      archetypes: "",
+      archetypes: {},
+      filter: "",
       /* store, */
     };
   },
+
+  props: {
+    placeholder: String,
+  },
+
   methods: {
     filterCard() {
       axios
         .get("https://db.ygoprodeck.com/api/v7/archetypes.php")
         .then((response) => {
-          console.log(response);
+          console.log(response.data);
           this.archetypes = response.data;
         });
     },
@@ -30,12 +36,17 @@ export default {
 
 <template>
   <div>
-    <select name="card-type" id="card-type" v-model="type">
-      <option value="scegli valore" placeholder="scegli un archetipo">
+    <select
+      name="card-type"
+      id="card-type"
+      v-model="filter"
+      @change="$emit('search', filter)"
+    >
+      <option value="scegli valore" :placeholder="placeholder">
         Scegli un archetipo
       </option>
-      <option v-for="archetype in archetypes" :value="archetype">
-        {{ archetype }}
+      <option v-for="archetype in archetypes" :value="archetype.archetype_name">
+        {{ archetype.archetype_name }}
       </option>
     </select>
   </div>

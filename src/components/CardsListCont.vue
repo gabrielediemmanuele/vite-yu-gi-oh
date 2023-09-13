@@ -10,6 +10,7 @@ import { store } from "../data/store";
 export default {
   data() {
     return {
+      cardsUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0",
       store,
     };
   },
@@ -29,6 +30,11 @@ export default {
           this.store.yugiohCards = response.data.data;
         });
     },
+    //FILTER
+    getSearch(filter) {
+      const results = `${this.cardsUrl}&archetypes=${filter}`;
+      console.log(results);
+    },
   },
   created() {
     this.catchCards();
@@ -38,7 +44,7 @@ export default {
 
 <template>
   <!--   Add a select like in the screenshot  -->
-  <BaseSelect></BaseSelect>
+  <BaseSelect placeholder="Search Archetype" @search="getSearch"></BaseSelect>
   <section class="cards-cont">
     <Card v-for="card in store.yugiohCards" :key="card.id" :yugiCard="card">
     </Card>
