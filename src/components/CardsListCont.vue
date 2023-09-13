@@ -32,6 +32,9 @@ export default {
     },
     //FILTER
     getSearch(filter) {
+      axios.get(results).then((response) => {
+        this.store.yugiohCards = response.data.data;
+      });
       const results = `${this.cardsUrl}&archetypes=${filter}`;
       this.catchCards(results);
     },

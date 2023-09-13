@@ -4,7 +4,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      archetypes: {},
+      archetypes: [],
       filter: "",
       /* store, */
     };
