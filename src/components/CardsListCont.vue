@@ -22,25 +22,21 @@ export default {
 
   // Axios for remote array of cards
   methods: {
-    catchCards() {
-      axios
-        .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=100&offset=0")
-        .then((response) => {
-          /* console.log(response.data.data); */
-          this.store.yugiohCards = response.data.data;
-        });
-    },
     //FILTER
     getSearch(filter) {
+      let results = this.cardsUrl;
+      if (filter) {
+        results += `&archetype=${filter}`;
+      }
+      console.log(results);
       axios.get(results).then((response) => {
+        /* console.log(response.data.data); */
         this.store.yugiohCards = response.data.data;
       });
-      const results = `${this.cardsUrl}&archetypes=${filter}`;
-      this.catchCards(results);
     },
   },
   created() {
-    this.catchCards();
+    this.getSearch("");
   },
 };
 </script>
