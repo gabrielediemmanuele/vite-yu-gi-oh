@@ -10,7 +10,6 @@ import { store } from "../data/store";
 export default {
   data() {
     return {
-      cardsUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0",
       store,
     };
   },
@@ -19,18 +18,19 @@ export default {
     Card,
     BaseSelect,
   },
+  props: {
+    maxItems: Number,
+  },
 
   // Axios for remote array of cards
   methods: {
     //FILTER
     getSearch(filter) {
-      let results = this.cardsUrl;
+      let results = `https://db.ygoprodeck.com/api/v7/cardinfo.php?num=${this.maxItems}&offset=0`;
       if (filter) {
         results += `&archetype=${filter}`;
       }
-      console.log(results);
       axios.get(results).then((response) => {
-        /* console.log(response.data.data); */
         this.store.yugiohCards = response.data.data;
       });
     },
@@ -44,6 +44,9 @@ export default {
 <template>
   <!--   Add a select like in the screenshot  -->
   <BaseSelect placeholder="Search Archetype" @search="getSearch"></BaseSelect>
+  <div class="card-counter-bar">
+    {{ store.yugiohCards.length }}
+  </div>
   <section class="cards-cont">
     <Card v-for="card in store.yugiohCards" :key="card.id" :yugiCard="card">
     </Card>

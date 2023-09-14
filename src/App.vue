@@ -5,6 +5,7 @@ export default {
   data() {
     return {
       /* title: "Hello world", */
+      maxCard: 50,
     };
   },
   components: { CardsListCont, AppHeader },
@@ -14,7 +15,7 @@ export default {
 <template>
   <div class="general-cont">
     <AppHeader></AppHeader>
-    <CardsListCont></CardsListCont>
+    <CardsListCont :maxItems="maxCard"></CardsListCont>
   </div>
 </template>
 

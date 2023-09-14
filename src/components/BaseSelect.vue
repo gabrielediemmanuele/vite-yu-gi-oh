@@ -42,9 +42,7 @@ export default {
       v-model="filter"
       @change="$emit('search', filter)"
     >
-      <option value="scegli valore" :placeholder="placeholder">
-        Scegli un archetipo
-      </option>
+      <option value="" :placeholder="placeholder">Scegli un archetipo</option>
       <option v-for="archetype in archetypes" :value="archetype.archetype_name">
         {{ archetype.archetype_name }}
       </option>
