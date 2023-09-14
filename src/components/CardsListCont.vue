@@ -44,9 +44,12 @@ export default {
 <template>
   <!--   Add a select like in the screenshot  -->
   <BaseSelect placeholder="Search Archetype" @search="getSearch"></BaseSelect>
+  <!--   CARD COUNTER  -->
   <div class="card-counter-bar">
-    {{ store.yugiohCards.length }}
+    {{ "Numero di carte trovate: " + store.yugiohCards.length }}
   </div>
+
+  <!--   CARD CONTAINER  -->
   <section class="cards-cont">
     <Card v-for="card in store.yugiohCards" :key="card.id" :yugiCard="card">
     </Card>
@@ -54,6 +57,13 @@ export default {
 </template>
 
 <style lang="scss">
+.card-counter-bar {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 80%;
+  margin: 30px auto;
+  padding: 10px;
+  border-radius: 10px;
+}
 .cards-cont {
   width: 80%;
   margin: 30px auto;
